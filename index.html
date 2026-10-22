@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJY Test Homepage</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --background-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-dark: #2b2d42;
+            --text-muted: #6c757d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        main {
+            max-width: 800px;
+            width: 90%;
+            margin: 3rem auto;
+            text-align: center;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.5rem;
+        }
+
+        .statement {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 0 0 1.5rem 0;
+            animation: heartbeat 1.5s infinite alternate;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @keyframes heartbeat {
+            to { transform: scale(1.03); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My MJY</h1>
+    </header>
+
+    <main>
+        <div class="hero-card">
+            <p class="statement">I love MJY</p>
+            <p style="color: var(--text-muted); margin: 0;">Every day with you is a masterpiece. To MJ, my love and my inspiration. </p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1781986989160-3acedb6056fd?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Heart silhouette in the sky">
+                <div class="caption">Visual Asset 1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1670786056253-03def3bf8e3b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Love concept sketch">
+                <div class="caption">Visual Asset 2</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1655337169484-d9bf5a8c5b6f?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Calm ocean waves beach sunset">
+                <div class="caption">Visual Asset 3</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Localhost Homepage Test
+    </footer>
+
+    <!-- 1. LOAD THE ACTUAL SUPABASE SOFTWARE -->
+    <script src="https://jsdelivr.net"></script>
+
+    <!-- 2. YOUR CONNECTION LOGIC -->
+    <script>
+        const supabaseUrl = 'https://supabase.co'
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml6a3p3cnNvbWh4Y3pzeXRvcnd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI2MzI2NTIsImV4cCI6MjEwODIwODY1Mn0.7xgHRUEOjXORT9nDcu76-rNG0_lAj9HruRb4OMUtZMc'
+        
+        const supabase = Supabase.createClient(supabaseUrl, supabaseKey)
+        console.log("Supabase successfully initialized:", supabase)
+    </script>
+
+
+
+</body>
+</html>
